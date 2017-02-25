@@ -71,8 +71,7 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Dashboard
-                        <small>Version 2.0</small>
+                        @yield('page-title')
                     </h1>
                     @yield('breadcrumb')
                 </section>

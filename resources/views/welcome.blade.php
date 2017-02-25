@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('page-title')
+    Dashboard <small>Version 2.0</small>
+@endsection
 
 @section('breadcrumb')
     <ol class="breadcrumb">
