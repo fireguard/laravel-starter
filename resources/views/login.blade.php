@@ -2,8 +2,16 @@
 
 @section('content')
     <div class="login-box">
-        <div class="login-logo" style="background-color: #003056">
-            <a href="#"><img src="{{ asset('images/logo-full.png') }}"></a>
+        <div class="logo" style="padding: 5px 0; ">
+            <div class="logo-lg">
+                <div style="">
+                    <img src="{{ asset('images/logo-image.png') }}">
+                </div>
+                <div class="logo-text" style="padding-top: 5px;">
+                    <span class="logo-title">FIREGUARD</span><br />
+                    <span class="logo-subtitle" >Soluções em Tecnologia</span>
+                </div>
+            </div>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">

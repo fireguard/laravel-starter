@@ -3,5 +3,13 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><img src="{{ asset('images/logo-image.png') }}"></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><img src="{{ asset('images/logo-full.png') }}"></span>
+    <div class="logo-lg">
+        <div style="">
+            <img src="{{ asset('images/logo-image.png') }}">
+        </div>
+        <div class="logo-text" >
+            <span class="logo-title">FIREGUARD</span><br />
+            <span class="logo-subtitle" >Soluções em Tecnologia</span>
+        </div>
+    </div>
 </a>
