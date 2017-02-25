@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('page-title')
-    Dashboard <small>Version 2.0</small>
+    Home <small>Version 1.0</small>
 @endsection
 
 @section('breadcrumb')
