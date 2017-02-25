@@ -28,4 +28,6 @@
         <!-- /.error-content -->
     </div>
     <!-- /.error-page -->
+    @include('includes.debug-errors')
+
 @endsection
