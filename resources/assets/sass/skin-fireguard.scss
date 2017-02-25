@@ -5,6 +5,9 @@
   .content-wrapper {
     background-color: $body-bg;
   }
+  .bg-active {
+    background-color: $active-color;
+  }
 
   .main-header {
     .navbar {
@@ -48,17 +51,19 @@
           }
         }
       }
-
     }
-
-
-
-    li.user-header {
-      background-color: $primary-color;
+    .user-menu {
+      .user-image {
+        margin-right: 0;
+      }
+      ul.dropdown-menu {
+        margin-top: 10px;
+        li.user-header {
+          background-color: $primary-color;
+        }
+      }
     }
-
   }
-
 
   .main-header .logo, .logo {
     background-color: $primary-color;
@@ -147,7 +152,9 @@
       text-decoration: none;
     }
   }
-
+  .treeview > ul.treeview-menu {
+    background-color: $body-bg;
+  }
   .treeview-menu > li > a {
     color: $text-color;
   }

@@ -45,12 +45,10 @@
     <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body class="hold-transition skin-fireguard sidebar-mini">
+<body class="hold-transition skin-fireguard sidebar-mini {{ (false) ? 'sidebar-collapse': '' }}" >
 <div class="wrapper">
-
     @if($isLogged)
         <header class="main-header">
-
         @include('includes.logo-header')
 
         <!-- Header Navbar: style can be found in header.less -->
