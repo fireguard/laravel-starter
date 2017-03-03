@@ -1,9 +1,12 @@
-<?php $isLogged = !($_SERVER["REQUEST_URI"] == '/login'); //TODO ?>
+<?php $isLogged = Auth::check(); ?>
 <!DOCTYPE html>
-<html>
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Fireguard Sistemas</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -44,6 +47,13 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- Scripts -->
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 </head>
 <body class="hold-transition skin-fireguard sidebar-mini {{ (false) ? 'sidebar-collapse': '' }}" >
 <div class="wrapper">
@@ -87,7 +97,21 @@
         {{--@include('includes.control-sidebar')--}}
 
     @else
-        @yield('content')
+        <div class="">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    @yield('page-title')
+                </h1>
+                @yield('breadcrumb')
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                @yield('content')
+            </section>
+            <!-- /.content -->
+        </div>
     @endif
 </div>
 <!-- ./wrapper -->

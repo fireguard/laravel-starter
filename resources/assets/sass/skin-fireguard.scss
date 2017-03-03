@@ -212,3 +212,12 @@
 .skin-fireguard.layout-top-nav .main-header > .logo:hover {
   background-color: $primary-color;
 }
+
+.skin-fireguard .login-box, .skin-fireguard  .register-box {
+  width: 480px;
+  margin: 7% auto;
+}
+
+.skin-fireguard .login-box .login-box-body form {
+  padding: 20px;
+}
