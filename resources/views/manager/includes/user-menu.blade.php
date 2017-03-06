@@ -9,7 +9,7 @@
         <li class="user-header">
             <img src="{{ asset('images/user-avatar.png') }}" class="img-circle bg-active" alt="Usuário">
 
-            <p>{{ Auth::user()->name }} <small>XXXXXXXXX</small></p>
+            <p>{{ Auth::user()->name }} <small>{{ Auth::user()->function ?: '' }}</small></p>
         </li>
         <!-- Menu Body -->
         {{--<li class="user-body">--}}
