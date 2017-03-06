@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('manager.layouts.app')
 
 @section('page-title')
     Home <small>Version 1.0</small>

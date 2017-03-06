@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
-class HomeController extends Controller
+class SiteController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -12,6 +11,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('manager.home');
+        return view('site.home');
     }
 }

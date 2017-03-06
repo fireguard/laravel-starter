@@ -2,8 +2,8 @@
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-        @include('includes.user-status-bar')
-        @include('includes.search-form')
+        @include('manager.includes.user-status-bar')
+        @include('manager.includes.search-form')
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">

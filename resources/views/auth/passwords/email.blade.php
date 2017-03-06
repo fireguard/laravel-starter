@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('manager.layouts.app')
 
 @section('page-title')
     Recuperar senha

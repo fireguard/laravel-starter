@@ -59,7 +59,7 @@
 <div class="wrapper">
     @if($isLogged)
         <header class="main-header">
-        @include('includes.logo-header')
+        @include('manager.includes.logo-header')
 
         <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -67,12 +67,12 @@
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
                 </a>
-                @include('includes.navbar-right-menu')
+                @include('manager.includes.navbar-right-menu')
 
             </nav>
         </header>
 
-        @include('includes.main-menu')
+        @include('manager.includes.main-menu')
 
         <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
