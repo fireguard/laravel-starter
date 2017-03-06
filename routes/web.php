@@ -12,7 +12,8 @@ Route::group(['namespace' => 'Auth'], function() {
 });
 
 Route::group([], function() {
-    Route::get('/', ['as' => 'site.home', 'uses' => 'SiteController@index']);
+    Route::get('/', ['as' => 'site', 'uses' => 'SiteController@index']);
+    Route::get('/home', ['as' => 'site.home', 'uses' => 'SiteController@index']);
 });
 
 Route::group(['middleware' => 'auth'], function () {
