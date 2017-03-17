@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('manager/', 'HomeController@index');
     Route::get('manager/home', ['as' => 'manager.home', 'uses' => 'HomeController@index']);
+    Route::get('manager/example/form', ['as' => 'manager.example.form', 'uses' => 'HomeController@form']);
 
     Route::get('manager/users', ['as' => 'manager.users', 'uses' => 'UsersController@index']);
     Route::get('manager/user/add', ['as' => 'manager.users.create', 'uses' => 'UsersController@create']);

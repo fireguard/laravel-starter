@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Forms\Example\ExampleForm;
+
 class HomeController extends Controller
 {
     /**
@@ -13,5 +15,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('manager.home');
+    }
+
+    public function form()
+    {
+        $form = ExampleForm::getForm();
+
+        return view('manager.form')->with(compact('form'));
     }
 }

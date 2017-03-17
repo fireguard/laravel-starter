@@ -1,6 +1,7 @@
 {
   "/mix.js": "/mix.js",
-  "/css/core.css": "/css/core.css",
-  "/css/app.css": "/css/app.css",
-  "/js/app.js": "/js/app.js"
+  "/assets/css/theme.css": "/assets/css/theme.css",
+  "/assets/css/app.css": "/assets/css/app.css",
+  "/assets/css/core.css": "/assets/css/core.css",
+  "/assets/js/app.js": "/assets/js/app.js"
 }

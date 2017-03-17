@@ -221,3 +221,13 @@
 .skin-fireguard .login-box .login-box-body form {
   padding: 20px;
 }
+
+/* Select 2*/
+.select2-container {
+  .select2-selection--single {
+    .select2-selection__rendered {
+      display: inline;
+    }
+  }
+}
+

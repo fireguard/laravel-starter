@@ -13,6 +13,12 @@
                     <i class="fa fa-home"></i> <span>Home</span>
                 </a>
             </li>
+
+            <li class="{{ check_active(['manager/example/form']) }}">
+                <a href="{{ route('manager.example.form') }}">
+                    <i class="fa fa-edit"></i> <span>Form</span>
+                </a>
+            </li>
             {{--<li class="treeview">--}}
                 {{--<a href="#">--}}
                     {{--<i class="fa fa-dashboard"></i> <span>Dashboard</span>--}}

@@ -16,7 +16,7 @@
         <div class="logo" style="padding: 5px 0; ">
             <div class="logo-lg">
                 <div style="">
-                    <img src="{{ asset('images/logo-image.png') }}">
+                    <img src="{{ asset('assets/images/logo-image.png') }}">
                 </div>
                 <div class="logo-text" style="padding-top: 5px;">
                     <span class="logo-title">FIREGUARD</span><br />
