@@ -1,4 +1,12 @@
 .skin-fireguard {
+
+  /* Tables*/
+  tr.row-dynamic-table {
+    td:active, td:hover {
+      cursor: pointer;
+    }
+  }
+
   a {
     text-decoration: none;
   }
@@ -220,6 +228,10 @@
 
 .skin-fireguard .login-box .login-box-body form {
   padding: 20px;
+}
+
+.skin-fireguard .modal .box {
+  box-shadow: none;
 }
 
 /* Select 2*/

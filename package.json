@@ -6,13 +6,17 @@
     "production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "jquery": "^3.1.1",
-    "laravel-mix": "^0.8.1",
     "admin-lte": "^2.3.11",
     "bootstrap-datepicker": "^1.6.4",
+    "bootstrap-sass": "^3.3.7",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
     "jquery-mask-plugin": "^1.14.10",
-    "select2": "^4.0.3"
+    "laravel-mix": "^0.8.1",
+    "select2": "^4.0.3",
+    "bootbox": "^4.4.0"
+  },
+  "dependencies": {
+
   }
 }
