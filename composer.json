@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "fireguard/laravel-starter",
+    "description": "Fireguard Laravel Starter.",
+    "keywords": ["framework", "laravel", "fireguard"],
     "license": "MIT",
     "type": "project",
     "require": {
