@@ -1,7 +1,7 @@
-@extends('manager.layouts.app')
+@extends('manager.layouts.modal')
 
-@section('page-title')
-    Cadastro de Usuários
+@section('title')
+    <i class="fa fa-users"></i> Cadastro de Usuários
 @endsection
 
 @section('breadcrumb')
@@ -13,7 +13,12 @@
 @endsection
 
 @section('content')
-    <form class="" role="form" method="POST" action="{{ route('login') }}">
-        @include('manager.users.form')
-    </form>
+    {!! $form->renderWithScripts() !!}
+
+@endsection
+
+@section('footer')
+    <script>
+        submitForm('{{$form->getId()}}', {'reload': true});
+    </script>
 @endsection

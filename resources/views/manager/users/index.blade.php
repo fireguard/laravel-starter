@@ -15,14 +15,16 @@
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title"><i class="fa fa-users"></i> Usuários</h3>
-
             <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Minimizar / Maximizar">
-                    <i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remover">
-                    <i class="fa fa-times"></i>
-                </button>
+                <form>
+                    <div class="input-group input-group-sm" style="width: 240px;">
+                        <input type="text" value="{{request('search')}}" name="search" id="data-table-search" class="form-control pull-right" placeholder="Pesquisar">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
         <div class="box-body">
@@ -40,18 +42,18 @@
                         </thead>
                         <tbody>
                         @foreach($users as $user)
-                            <tr>
+                            <tr id="row-{{ $user->id }}" class="row-dynamic-table" ondblclick="openRemotePage('{{ route('manager.users.edit', ['id' => $user->id]) }}')">
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->function }}</td>
                                 <td style="width: 140px;">
-                                    <a href="{{ route('manager.users.edit', ['id' => $user->id]) }}" class="btn btn-warning btn-xs">
+                                    <a onclick="openRemotePage('{{ route('manager.users.edit', ['id' => $user->id]) }}')" class="btn btn-warning btn-xs">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar
                                     </a>
-                                    <a href="{{ route('manager.users.edit', ['id' => $user->id]) }}" class="btn btn-danger btn-xs">
-                                        <i class="fa fa-times-circle" aria-hidden="true"></i> Excluir
-                                    </a>
+                                    <a onclick="removeDataTableItem('{{ route('manager.users.remove', ['id' => $user->id]) }}', {{$user->id}})"
+                                       class="btn btn-danger btn-xs"
+                                    ><i class="fa fa-times-circle" aria-hidden="true"></i> Excluir</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -62,8 +64,9 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer clearfix">
-            <a href="{{ route('manager.users.create') }}" class="btn btn-primary btn-sm">Cadastrar novo usuário</a>
-            {{ $users->links() }}
+            <a onclick="openRemotePage('{{ route('manager.users.create') }}')" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i> Cadastrar</a>
+            <a onclick="reloadCurrentPage(true)" class="btn btn-success btn-sm"><i class="fa fa-refresh"></i> Atualizar</a>
+            {{ $users->appends(Request::only('search'))->links() }}
         </div>
         <!-- /.box-footer-->
     </div>

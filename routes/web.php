@@ -26,10 +26,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('manager/example/form', ['as' => 'manager.example.form', 'uses' => 'HomeController@form']);
 
     Route::get('manager/users', ['as' => 'manager.users', 'uses' => 'UsersController@index']);
+
+    Route::get('manager/user/profile', ['as' => 'manager.users.profile', 'uses' => 'UsersController@profile']);
+    Route::put('manager/user/profile/update', ['as' => 'manager.users.profile.update', 'uses' => 'UsersController@profileUpdate']);
+
     Route::get('manager/user/add', ['as' => 'manager.users.create', 'uses' => 'UsersController@create']);
     Route::post('manager/user/store', ['as' => 'manager.users.store', 'uses' => 'UsersController@store']);
     Route::get('manager/user/edit/{id}', ['as' => 'manager.users.edit', 'uses' => 'UsersController@edit']);
     Route::put('manager/user/update/{id}', ['as' => 'manager.users.update', 'uses' => 'UsersController@update']);
+    Route::delete('manager/user/remove/{id}', ['as' => 'manager.users.remove', 'uses' => 'UsersController@remove']);
 });
 
 

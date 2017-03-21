@@ -1,13 +1,13 @@
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <img src="{{ asset('assets/images/user-avatar.png') }}" class="user-image" alt="User Image">
+        <img src="{{ Auth::user()->avatar }}" class="user-image" alt="User Image">
         {{--<span class="hidden-xs">&nbsp;</span>--}}
     </a>
     <ul class="dropdown-menu">
         <!-- User image -->
         <li class="user-header">
-            <img src="{{ asset('assets/images/user-avatar.png') }}" class="img-circle bg-active" alt="Usuário">
+            <img src="{{ Auth::user()->avatar }}" class="img-circle bg-active" alt="Usuário">
 
             <p>{{ Auth::user()->name }} <small>{{ Auth::user()->function ?: '' }}</small></p>
         </li>
@@ -29,7 +29,7 @@
         <!-- Menu Footer-->
         <li class="user-footer">
             <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                <a href="#" onclick="openRemotePage('{{ route('manager.users.profile') }}')" class="btn btn-default btn-flat">Perfil</a>
             </div>
             <div class="pull-right">
                 <a class="btn btn-default btn-flat" href="{{ route('logout') }}"

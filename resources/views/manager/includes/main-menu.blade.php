@@ -55,7 +55,7 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ (Request::is('manager/users') ? 'active' : '') }}" ><a href="{{ route('manager.users') }}"><i class="fa fa-users"></i> Usuários</a></li>
+                    <li class="{{ (request()->is('manager/users') ? 'active' : '') }}" ><a href="{{ route('manager.users') }}"><i class="fa fa-users"></i> Usuários</a></li>
                 </ul>
             </li>
 

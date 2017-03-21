@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => env('FS_DEFAULT', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'cloud' => 's3',
+    'cloud' => env('FS_DEFAULT_CLOUD', 's3'),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +61,7 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
+            'expiration' => env('S3_EXPIRATION_TIME', 15)
         ],
 
     ],

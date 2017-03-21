@@ -12,7 +12,7 @@
                 <li><!-- start message -->
                     <a href="#">
                         <div class="pull-left">
-                            <img src="{{ asset('assets/images/user-avatar.png') }}" class="img-circle bg-active" alt="User Image">
+                            <img src="{{ Auth::user()->avatar }}" class="img-circle bg-active" alt="User Image">
                         </div>
                         <h4>
                             Support Team

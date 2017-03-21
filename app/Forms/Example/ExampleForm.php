@@ -12,6 +12,7 @@
 namespace App\Forms\Example;
 
 
+use Fireguard\Form\Contracts\FormModelInterface;
 use Fireguard\Form\Elements\ButtonElement;
 use Fireguard\Form\Elements\CheckBoxElement;
 use Fireguard\Form\Elements\DateElement;
@@ -24,12 +25,13 @@ use Fireguard\Form\Elements\SelectElement;
 use Fireguard\Form\Elements\TextAreaElement;
 use Fireguard\Form\Elements\TextElement;
 use Fireguard\Form\Form;
+use Fireguard\Form\FormBuilder;
 
 class ExampleForm
 {
-    public static function getForm($model = null, array $options = [])
+    public static function create(FormModelInterface $model = null, array $options = [])
     {
-        return (new Form($model , $options))
+        return FormBuilder::create($model, $options)
             ->setToken('asdasdas')
             ->openRow()
             ->addGroup('base', [
@@ -69,7 +71,7 @@ class ExampleForm
                     'grid' => 'col-xs-12',
                     'required' => true
                 ]],
-            ], ['class'=> 'row', 'grid' => 'col-xs-12 col-sm-3 col-md-2'])
+            ], ['grid' => 'col-xs-12 col-sm-3 col-md-2'])
             ->closeRow()->openRow()
             ->addElement('email', EmailElement::class, [
                 'label' => 'Email',

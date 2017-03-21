@@ -1,7 +1,7 @@
-@extends('manager.layouts.app')
+@extends('manager.layouts.modal')
 
-@section('page-title')
-    Edição de Usuários
+@section('title')
+    <i class="fa fa-users"></i> {{ $user->id .' - '. $user->name }}
 @endsection
 
 @section('breadcrumb')
@@ -13,7 +13,11 @@
 @endsection
 
 @section('content')
-    <form role="form" method="POST" action="{{ route('login') }}">
-        @include('manager.users.form')
-    </form>
+    {!! $form->renderWithScripts() !!}
+@endsection
+
+@section('footer')
+    <script>
+        submitForm('{{$form->getId()}}', {'reload': true});
+    </script>
 @endsection

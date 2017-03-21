@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function form()
     {
-        $form = ExampleForm::getForm();
+        $form = ExampleForm::create();
 
         return view('manager.form')->with(compact('form'));
     }

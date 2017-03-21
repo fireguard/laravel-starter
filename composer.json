@@ -6,10 +6,12 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "fireguard/form": "^0.0.2",
+        "fireguard/form": "^0.0.4",
         "guzzlehttp/guzzle": "^6.2",
+        "intervention/image": "^2.3",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "league/flysystem-aws-s3-v3": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.3",
@@ -28,6 +30,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
+
         },
         "files": [
             "app/Helpers/helpers.php"

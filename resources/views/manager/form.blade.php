@@ -24,7 +24,7 @@
 @endsection
 
 @section('footer')
-    {!!  $form->renderScripts() !!}
+    <script>{!!  $form->renderScripts() !!}</script>
 
     <script>
         jQuery(".datepicker").datepicker({
