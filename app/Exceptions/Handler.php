@@ -4,7 +4,10 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Symfony\Component\Debug\Exception\FlattenException;
 
 class Handler extends ExceptionHandler
 {
@@ -40,10 +43,26 @@ class Handler extends ExceptionHandler
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
      */
     public function render($request, Exception $exception)
     {
+        if (!$request->expectsJson()) {
+            // 404 page when a model is not found
+            if ($exception instanceof ModelNotFoundException) {
+                return response()->view('errors.404', compact('exception'), 404);
+            }
+
+            $statusCode = $exception->getCode() ?: '';
+            if (in_array($statusCode, [404, 403, 500])) {
+                return response()->view('errors.' . $statusCode, compact('exception'), $statusCode);
+            }
+
+            if (app()->environment() == 'production') {
+                return response()->view('errors.500', compact('exception'), 500);
+            }
+        }
+
         return parent::render($request, $exception);
     }
 
