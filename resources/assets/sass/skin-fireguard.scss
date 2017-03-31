@@ -1,5 +1,13 @@
 .skin-fireguard {
 
+  span.legend-icon i{
+    font-size: 70%;
+    color: $gray-light;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+
   /* Tables*/
   tr.row-dynamic-table {
     td:active, td:hover {
